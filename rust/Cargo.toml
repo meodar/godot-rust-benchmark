@@ -1,0 +1,24 @@
+[package]
+name = "benchmark-rust-rs"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+godot = "0.5.5"
+godot-core = "0.5.5"
+strum = { version = "0.28.0", features = ["derive"] }
+sysinfo = "0.39.6"
+nvml-wrapper = "0.13.0"
+chrono = "0.4.45"
+
+[profile.release]
+opt-level = 3
+debug = false
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = "debuginfo"
+incremental = false

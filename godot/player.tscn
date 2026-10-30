@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhg2s74daq2ad"]
+
+[ext_resource type="PackedScene" uid="uid://b7aqxaw13ddhm" path="res://assets/models/spaceship/scene.gltf" id="1_4flbx"]
+[ext_resource type="PackedScene" uid="uid://bc1nrgh05udu7" path="res://bullet.tscn" id="1_onrkg"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4flbx"]
+radius = 3.7602
+
+[node name="Player" type="Player" node_paths=PackedStringArray("shooting_point")]
+bullet = ExtResource("1_onrkg")
+shooting_point = NodePath("Marker3D")
+transform = Transform3D(-20, 0, -1.74846e-06, 0, 20, 0, 1.74846e-06, 0, -20, 0, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_4flbx")]
+transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, -1.32456, 0)
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, -5.30673e-07, 0, 6.07018)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, 0, 0)
+shape = SubResource("SphereShape3D_4flbx")

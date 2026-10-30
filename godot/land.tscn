@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c7e6yy4qkeiy2"]
+
+[ext_resource type="PackedScene" uid="uid://4r0ucv8eaqmp" path="res://assets/models/terrain/terrain.gltf" id="1_dwsah"]
+[ext_resource type="PackedScene" uid="uid://bhg2s74daq2ad" path="res://player.tscn" id="2_mgpfe"]
+[ext_resource type="PackedScene" uid="uid://58wxjr624wwq" path="res://top_enemy.tscn" id="3_iooh7"]
+[ext_resource type="PackedScene" uid="uid://elryt57qhytm" path="res://side_enemy.tscn" id="4_asfs6"]
+
+[node name="Land" type="Land" unique_id=561039668 node_paths=PackedStringArray("land", "second_land", "camera", "player")]
+land = NodePath("terrain")
+second_land = NodePath("terrain2")
+camera = NodePath("Camera3D")
+player = NodePath("Player")
+
+[node name="terrain" parent="." unique_id=1923671728 instance=ExtResource("1_dwsah")]
+transform = Transform3D(-0.000174846, 0, -4000, 0, 4000, 0, 4000, 0, -0.000174846, 0, -800, 0)
+
+[node name="terrain2" parent="." unique_id=760075189 instance=ExtResource("1_dwsah")]
+transform = Transform3D(-0.000174846, 0, -4000, 0, 4000, 0, 4000, 0, -0.000174846, 0, -800, -32000)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=80620907]
+transform = Transform3D(4000, 0, 0, 0, -0.000174846, 4000, 0, -4000, -0.000174846, 0, 1000, 0)
+projection = 1
+fov = 70.2
+size = 1400.0
+far = 40000.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=377675382]
+transform = Transform3D(1, 0, 0, 0, -0.25038, 0.968148, 0, -0.968148, -0.25038, 0, 0, 0)
+
+[node name="Player" parent="." unique_id=1849609516 instance=ExtResource("2_mgpfe")]
+transform = Transform3D(-20, 0, -3.01992e-06, 0, 20, 0, 3.01992e-06, 0, -20, 0, 0, 0)
+
+[node name="EnemiesManager" type="EnemiesManager" parent="." unique_id=1344535185 node_paths=PackedStringArray("spawn_timer", "benchmark_timer")]
+top_enemy_scene = ExtResource("3_iooh7")
+side_enemy_scene = ExtResource("4_asfs6")
+spawn_timer = NodePath("Timer")
+benchmark_timer = NodePath("Timer2")
+
+[node name="Timer" type="Timer" parent="EnemiesManager" unique_id=955569648]
+wait_time = 2.0
+autostart = true
+
+[node name="Timer2" type="Timer" parent="EnemiesManager" unique_id=1363810868]
+wait_time = 10.0
+autostart = true
+
+[node name="PerfMonitor" type="PerfMonitor" parent="." unique_id=159372973]
+wait_time = 0.25
+autostart = true

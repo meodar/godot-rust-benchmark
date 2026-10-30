@@ -1,0 +1,14 @@
+[configuration]
+entry_symbol = "gdext_rust_init"
+compatibility_minimum = 4.4
+reloadable = true
+
+[libraries]
+linux.debug.x86_64 =     "res://../rust/target/debug/libbenchmark_rust_rs.so"
+linux.release.x86_64 =   "res://../rust/target/release/libbenchmark_rust_rs.so"
+windows.debug.x86_64 =   "res://../rust/target/debug/benchmark_rust_rs.dll"
+windows.release.x86_64 = "res://../rust/target/release/benchmark_rust_rs.dll"
+macos.debug =            "res://../rust/target/debug/libbenchmark_rust_rs.dylib"
+macos.release =          "res://../rust/target/release/libbenchmark_rust_rs.dylib"
+macos.debug.arm64 =      "res://../rust/target/debug/libbenchmark_rust_rs.dylib"
+macos.release.arm64 =    "res://../rust/target/release/libbenchmark_rust_rs.dylib"

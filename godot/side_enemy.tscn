@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://elryt57qhytm"]
+
+[ext_resource type="PackedScene" uid="uid://b48luwnph1fs4" path="res://assets/models/enemy/side_enemy/scene.gltf" id="1_g0218"]
+[ext_resource type="PackedScene" uid="uid://bc1nrgh05udu7" path="res://bullet.tscn" id="1_y3nj6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_y3nj6"]
+radius = 7.69194
+
+[node name="Enemy" type="Enemy" node_paths=PackedStringArray("shooting_timer", "shooting_point")]
+enemy_type = "Side"
+shooting_timer = NodePath("Timer")
+bullet = ExtResource("1_y3nj6")
+shooting_point = NodePath("Marker3D")
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_y3nj6")
+
+[node name="SideEnemy" parent="." instance=ExtResource("1_g0218")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.5288)

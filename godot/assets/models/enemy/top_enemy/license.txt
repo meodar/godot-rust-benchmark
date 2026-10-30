@@ -1,0 +1,8 @@
+Model Information:
+* title:	Yukikaze FFR-41 Demo
+* source:	https://sketchfab.com/3d-models/yukikaze-ffr-41-demo-ba1bb77bc8934a24bef3181875cfef13
+* author:	raub (https://sketchfab.com/raub)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

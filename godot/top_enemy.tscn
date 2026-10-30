@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://58wxjr624wwq"]
+
+[ext_resource type="PackedScene" uid="uid://bc1nrgh05udu7" path="res://bullet.tscn" id="1_v8s08"]
+[ext_resource type="PackedScene" uid="uid://bqab1oomisf4o" path="res://assets/models/enemy/top_enemy/scene.gltf" id="1_wnr54"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_v8s08"]
+radius = 4.47131
+
+[node name="Enemy" type="Enemy" unique_id=1722346321 node_paths=PackedStringArray("shooting_timer", "shooting_point")]
+shooting_timer = NodePath("Timer")
+bullet = ExtResource("1_v8s08")
+shooting_point = NodePath("Marker3D")
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="TopEnemy" parent="." unique_id=1122783419 instance=ExtResource("1_wnr54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.701879, 0)
+
+[node name="Timer" type="Timer" parent="." unique_id=653646433]
+wait_time = 2.0
+autostart = true
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=930474802]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.98283)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=43775144]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("SphereShape3D_v8s08")

@@ -1,0 +1,11 @@
+Model Information:
+* title:	XGS-1111 'Vargulf'
+* source:	https://sketchfab.com/3d-models/xgs-1111-vargulf-8b0a71e1c4a24ab2a25e7d437f1a9593
+* author:	Vaportrash (https://sketchfab.com/vaportrash)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "XGS-1111 'Vargulf'" (https://sketchfab.com/3d-models/xgs-1111-vargulf-8b0a71e1c4a24ab2a25e7d437f1a9593) by Vaportrash (https://sketchfab.com/vaportrash) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
